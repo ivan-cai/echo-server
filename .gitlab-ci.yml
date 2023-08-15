@@ -1,0 +1,21 @@
+image: docker:stable 
+
+services:
+  - docker:dind
+
+stages:
+  - docker_build
+
+docker_build_job:
+  stage: docker_build
+  tags:
+    - saas-linux-small-amd64
+    - linux
+    - docker
+    - shared 
+  only:
+    - /^release-.*$/
+  script:
+    - docker login -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD demo-test-registry.cn-hangzhou.cr.aliyuncs.com
+    - docker build -t demo-test-registry.cn-hangzhou.cr.aliyuncs.com/cidemo/echo-server:$CI_COMMIT_REF_NAME-$CI_PIPELINE_ID . 
+    - docker push demo-test-registry.cn-hangzhou.cr.aliyuncs.com/cidemo/echo-server:$CI_COMMIT_REF_NAME-$CI_PIPELINE_ID
