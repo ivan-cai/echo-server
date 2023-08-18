@@ -26,4 +26,5 @@ WORKDIR /
 COPY --from=builder /go/src/github.com/haoshuwei/echo-server .
 USER 65532:65532
 
+
 ENTRYPOINT ["/echo-server"]
