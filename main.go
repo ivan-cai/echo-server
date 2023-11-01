@@ -12,7 +12,7 @@ func main() {
 	router := mux.NewRouter()
 
 	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		logs.Infof("Hello Echo Server for yunqi demo")
+		logs.Infof("Hello Echo Server for yunqi demo 1")
 		json.NewEncoder(w).Encode("Hello Echo Server")
 	})
 
