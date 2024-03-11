@@ -12,7 +12,8 @@ func main() {
 	router := mux.NewRouter()
 
 	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		logs.Infof("Hello Echo Server for yunqi demo 1")
+		//logs.Infof("Hello Echo Server for yunqi demo 1")
+		echo()
 		json.NewEncoder(w).Encode("Hello Echo Server")
 	})
 
@@ -22,4 +23,8 @@ func main() {
 	})
 
 	http.ListenAndServe(":8080", router)
+}
+
+func echo() {
+
 }
