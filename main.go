@@ -14,7 +14,7 @@ func main() {
 	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		//logs.Infof("Hello Echo Server")
 		echo()
-		json.NewEncoder(w).Encode("Hello Echo Server for Demo")
+		json.NewEncoder(w).Encode("Hello Echo Server")
 	})
 
 	router.HandleFunc("/version", func(w http.ResponseWriter, r *http.Request) {
