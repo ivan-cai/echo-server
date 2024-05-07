@@ -15,7 +15,11 @@ ARG PACKAGE=github.com/haoshuwei/echo-server
 RUN mkdir -p /go/src/${PACKAGE}
 WORKDIR /go/src/${PACKAGE}
 
-COPY . .
+COPY go.mod go.mod
+COPY go.sum go.sum
+COPY pkg/ pkg/
+COPY main.go main.go
+
 RUN go mod download
 # Build
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -o echo-server main.go
