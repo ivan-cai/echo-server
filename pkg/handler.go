@@ -7,3 +7,7 @@ import (
 func echo() {
 	fmt.Println("Hello Echo Server")
 }
+
+func test(str string) string {
+	return str
+}

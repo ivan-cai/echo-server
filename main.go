@@ -13,7 +13,6 @@ func main() {
 
 	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		//logs.Infof("Hello Echo Server for yunqi demo 1")
-		echo()
 		json.NewEncoder(w).Encode("Hello Echo Server for Demo 1")
 	})
 
@@ -23,8 +22,4 @@ func main() {
 	})
 
 	http.ListenAndServe(":8080", router)
-}
-
-func echo() {
-
 }
