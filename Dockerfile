@@ -27,7 +27,7 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -o echo-server main.go
 # Copy the controller-manager into a thin image
 FROM registry.cn-hangzhou.aliyuncs.com/acs/alpine:3.13.2-base
 WORKDIR /
-COPY --from=builder /go/src/github.com/haoshuwei/echo-server .
+COPY --from=builder /workspace/echo-server .
 USER 65532:65532
 
 ENTRYPOINT ["/echo-server"]
