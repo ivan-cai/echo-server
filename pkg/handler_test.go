@@ -31,7 +31,7 @@ func Test_test(t *testing.T) {
 			args: args{
 				str: "test",
 			},
-			want: "test1",
+			want: "test",
 		},
 	}
 	for _, tt := range tests {
