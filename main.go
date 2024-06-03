@@ -13,7 +13,7 @@ func main() {
 
 	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		logs.Infof("Hello Echo Server for trigger test")
-		json.NewEncoder(w).Encode("Hello Echo Server for Demo 1")
+		json.NewEncoder(w).Encode("Hello Echo Server for Demo 111")
 	})
 
 	router.HandleFunc("/version", func(w http.ResponseWriter, r *http.Request) {
