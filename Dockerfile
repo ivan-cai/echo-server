@@ -1,4 +1,4 @@
-FROM docker.io/library/golang:1.17 AS builder
+FROM registry-cn-hangzhou.ack.aliyuncs.com/dev/golang:1.17 AS builder
 
 RUN echo 'deb http://mirrors.aliyun.com/debian/ buster main non-free contrib' > /etc/apt/sources.list
 RUN echo 'deb-src http://mirrors.aliyun.com/debian/ buster main non-free contrib' >> /etc/apt/sources.list
