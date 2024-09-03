@@ -9,7 +9,7 @@ FROM registry-cn-hangzhou.ack.aliyuncs.com/dev/golang:1.17-alpine AS builder
 #RUN echo 'deb http://mirrors.aliyun.com/debian/ buster-backports main non-free contrib' >> /etc/apt/sources.list
 #RUN echo 'deb-src http://mirrors.aliyun.com/debian/ buster-backports main non-free contrib' >> /etc/apt/sources.list
 
-#ENV GOPROXY=https://goproxy.cn,direct
+ENV GOPROXY=https://goproxy.cn,direct
 #ARG PACKAGE=github.com/haoshuwei/echo-server
 
 #RUN mkdir -p /go/src/${PACKAGE}
