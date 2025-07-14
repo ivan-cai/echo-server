@@ -17,7 +17,7 @@ func main() {
 	})
 
 	router.HandleFunc("/version", func(w http.ResponseWriter, r *http.Request) {
-		logs.Infof("Hello Echo Server v2.0 @oversea")
+		logs.Infof("Hello Echo Server   v2.0 @oversea")
 		json.NewEncoder(w).Encode("Hello Echo Server v2.0 @oversea")
 	})
 
